@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dogs Api RxJava2 Example</string>
+    <string name="breed_akita_random_dog">Breed Akita random dog</string>
+    <string name="about">About</string>
+    <string name="ok">ОК</string>
+    <string name="about_message">This application is designed for the purpose of gaining experience of using RxJava, based on a free API https://dog.ceo</string>
+    <string name="boxer_dogs">Boxer dogs</string>
+    <string name="get_random">Get random</string>
+    <string name="random_dog">Random dog</string>
+    <string name="get_list">Get list</string>
+</resources>

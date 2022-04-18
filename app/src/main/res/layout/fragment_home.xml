@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/screen_padding"
+    android:layout_height="match_parent">
+
+    <Space
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:src="@drawable/dog_api_logo"
+        android:layout_marginVertical="@dimen/margin_vertical_logo"
+        android:layout_width="@dimen/size_logo"
+        android:layout_height="@dimen/size_logo"/>
+
+    <Button
+        android:id="@+id/randomDog"
+        android:text="@string/random_dog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/boxerDogs"
+        android:text="@string/boxer_dogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/breedRandomDog"
+        android:text="@string/breed_akita_random_dog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Space
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/about"
+        android:text="@string/about"
+        android:backgroundTint="@color/light_red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

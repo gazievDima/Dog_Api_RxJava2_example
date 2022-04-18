@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_bottom_button">70dp</dimen>
+    <dimen name="size_logo">150dp</dimen>
+    <dimen name="margin_vertical_logo">40dp</dimen>
+    <dimen name="screen_padding">10dp</dimen>
+    <dimen name="elevation_shadow">10dp</dimen>
+    <dimen name="size_toolbar">65dp</dimen>
+    <dimen name="size_icon_toolbar">36dp</dimen>
+    <dimen name="margin_simple">15dp</dimen>
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="width_item_image">300dp</dimen>
+</resources>
