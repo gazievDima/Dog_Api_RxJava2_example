@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, HomeFragment(), HomeFragment.TAG_SCREEN)
+            .replace(R.id.container, HomeFragment())
             .commit()
 
         binding.toolbar.back.setOnClickListener {
