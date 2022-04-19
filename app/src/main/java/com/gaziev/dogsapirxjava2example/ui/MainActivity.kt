@@ -1,12 +1,18 @@
 package com.gaziev.dogsapirxjava2example.ui
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.gaziev.dogsapirxjava2example.R
 import com.gaziev.dogsapirxjava2example.databinding.ActivityMainBinding
-import com.gaziev.dogsapirxjava2example.databinding.ToolbarBinding
 import com.gaziev.dogsapirxjava2example.ui.screens.home.HomeFragment
+import io.reactivex.subjects.PublishSubject
+import java.util.concurrent.TimeUnit
+
 
 class MainActivity : AppCompatActivity() {
 

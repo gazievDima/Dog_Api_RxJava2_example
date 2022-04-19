@@ -12,7 +12,7 @@ class FromData {
 
     @JvmName("map1")
     fun map(t: Single<BoxersDogsData>): Single<BoxersDogs> {
-       return t.map { BoxersDogs(it.boxerDogs, it.status) }
+        return t.map { BoxersDogs(it.boxerDogs, it.status) }
     }
 
     @JvmName("map2")
