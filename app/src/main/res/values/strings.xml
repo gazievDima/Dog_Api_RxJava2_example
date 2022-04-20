@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dogs Api RxJava2 Example</string>
+    <string name="app_name">Pesiki</string>
     <string name="breed_corgi_random_dog">Breed Corgi random dog</string>
     <string name="about">About</string>
     <string name="ok">ОК</string>
