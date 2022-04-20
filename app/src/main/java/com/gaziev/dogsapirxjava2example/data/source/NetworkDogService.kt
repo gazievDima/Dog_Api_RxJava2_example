@@ -33,11 +33,10 @@ class NetworkDogService(
                     val body = Gson().fromJson(response.body?.string(), DogEntity::class.java)
                     it.onNext(body)
                 } else {
-                    Log.i(TAG, "RESPONSE FAILED: code = ${response.code}")
+                    it.onNext(DogEntity(null, null))
                 }
             } catch (e: Exception) {
                 it.onNext(DogEntity(null, null))
-                Log.i(TAG, "Exception: $e")
             }
         }.subscribeOn(Schedulers.newThread())
     }
@@ -53,11 +52,10 @@ class NetworkDogService(
                         Gson().fromJson(response.body?.string(), BreedDogEntity::class.java)
                     it.onNext(body)
                 } else {
-                    Log.i(TAG, "RESPONSE FAILED: code = ${response.code}")
+                    it.onNext(BreedDogEntity(null, null))
                 }
             } catch (e: Exception) {
                 it.onNext(BreedDogEntity(null, null))
-                Log.i(TAG, "Exception: $e")
             }
         }.subscribeOn(Schedulers.newThread())
     }
@@ -73,11 +71,10 @@ class NetworkDogService(
                         Gson().fromJson(response.body?.string(), CorgiDogsEntity::class.java)
                     it.onNext(body)
                 } else {
-                    Log.i(TAG, "RESPONSE FAILED: code = ${response.code}")
+                    it.onNext(CorgiDogsEntity(listOf(null, null, null), null))
                 }
             } catch (e: Exception) {
                 it.onNext(CorgiDogsEntity(listOf(null, null, null), null))
-                Log.i(TAG, "Exception: $e")
             }
         }.subscribeOn(Schedulers.newThread())
     }
