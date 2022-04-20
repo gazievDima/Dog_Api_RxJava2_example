@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.breeds
+package com.gaziev.dogsapirxjava2example.ui.screens.dogs
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,19 +6,19 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 
-class BreedRandomDogViewModel(
-    private val repository: IGetListBreedRandomDogsRepository
+class CorgiDogsViewModel(
+    private val repository: IGetListCorgiDogsRepository
 ) : ViewModel() {
 
     private var disposable: Disposable? = null
-    private val _dogImage: MutableLiveData<String> = MutableLiveData()
-    val dogImage: LiveData<String> = _dogImage
+    private val _listCorgi: MutableLiveData<List<String?>> = MutableLiveData()
+    val listCorgi: LiveData<List<String?>> = _listCorgi
 
-    fun getBreedRandomDog() {
+    fun getListCorgiDogs() {
         disposable = repository.execute()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                    _dogImage.value = it.randomDog
+                    _listCorgi.value = it.corgiDogs
             }
     }
 

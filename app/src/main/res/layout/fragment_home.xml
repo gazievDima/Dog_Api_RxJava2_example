@@ -24,14 +24,14 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/boxerDogs"
-        android:text="@string/boxer_dogs"
+        android:id="@+id/corgiDogs"
+        android:text="@string/corgi_dogs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/breedRandomDog"
-        android:text="@string/breed_akita_random_dog"
+        android:text="@string/breed_corgi_random_dog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
