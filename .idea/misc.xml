@@ -6,14 +6,16 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/fragment_boxer_dogs.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_breed_random_dog.xml" value="0.31851851851851853" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.31851851851851853" />
+        <entry key="app/src/main/res/layout/fragment_corgi_dogs.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_list_breeds_dogs.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/fragment_list_dogs.xml" value="0.2972222222222222" />
-        <entry key="app/src/main/res/layout/fragment_random_dog.xml" value="0.31851851851851853" />
+        <entry key="app/src/main/res/layout/fragment_random_dog.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/fragment_random_dogs.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.2972222222222222" />
         <entry key="app/src/main/res/layout/item_boxer_dogs.xml" value="0.31851851851851853" />
-        <entry key="app/src/main/res/layout/toolbar.xml" value="0.31851851851851853" />
+        <entry key="app/src/main/res/layout/item_corgi_dogs.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>

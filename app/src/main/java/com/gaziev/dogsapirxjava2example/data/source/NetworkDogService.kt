@@ -1,17 +1,15 @@
 package com.gaziev.dogsapirxjava2example.data.source
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import com.gaziev.dogsapirxjava2example.data.models.CorgiDogsEntity
 import com.gaziev.dogsapirxjava2example.data.models.BreedDogEntity
 import com.gaziev.dogsapirxjava2example.data.models.DogEntity
 import com.gaziev.dogsapirxjava2example.data.repository.INetworkDogService
 import com.google.gson.Gson
 import io.reactivex.Observable
-import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.Response
 
 class NetworkDogService(
     private val okHttpClient: OkHttpClient
@@ -25,16 +23,8 @@ class NetworkDogService(
 
     override fun getRandomDog(): Observable<DogEntity> {
         return Observable.create<DogEntity> {
-            val request = Request.Builder().url(URL_DOG).build()
-
             try {
-                val response = okHttpClient.newCall(request).execute()
-                if (response.code == 200) {
-                    val body = Gson().fromJson(response.body?.string(), DogEntity::class.java)
-                    it.onNext(body)
-                } else {
-                    it.onNext(DogEntity(null, null))
-                }
+                it.onNext(getData(URL_DOG, DogEntity::class.java))
             } catch (e: Exception) {
                 it.onNext(DogEntity(null, null))
             }
@@ -43,17 +33,8 @@ class NetworkDogService(
 
     override fun getBreedRandomDog(): Observable<BreedDogEntity> {
         return Observable.create<BreedDogEntity> {
-            val request = Request.Builder().url(URL_BREED_DOG).build()
-
             try {
-                val response = okHttpClient.newCall(request).execute()
-                if (response.code == 200) {
-                    val body =
-                        Gson().fromJson(response.body?.string(), BreedDogEntity::class.java)
-                    it.onNext(body)
-                } else {
-                    it.onNext(BreedDogEntity(null, null))
-                }
+                it.onNext(getData(URL_BREED_DOG, BreedDogEntity::class.java))
             } catch (e: Exception) {
                 it.onNext(BreedDogEntity(null, null))
             }
@@ -62,21 +43,27 @@ class NetworkDogService(
 
     override fun getCorgiDogs(): Observable<CorgiDogsEntity> {
         return Observable.create<CorgiDogsEntity> {
-            val request = Request.Builder().url(URL_CORGI_DOGS).build()
-
             try {
-                val response = okHttpClient.newCall(request).execute()
-                if (response.code == 200) {
-                    val body =
-                        Gson().fromJson(response.body?.string(), CorgiDogsEntity::class.java)
-                    it.onNext(body)
-                } else {
-                    it.onNext(CorgiDogsEntity(listOf(null, null, null), null))
-                }
+                it.onNext(getData(URL_CORGI_DOGS, CorgiDogsEntity::class.java))
             } catch (e: Exception) {
                 it.onNext(CorgiDogsEntity(listOf(null, null, null), null))
             }
         }.subscribeOn(Schedulers.newThread())
+    }
+
+    private fun <T> getData(url: String, clazz: Class<T>): T {
+        val response = connection(url)
+        return if (response.code == 200) convert(response, clazz)
+        else DogEntity(null, null) as T
+    }
+
+    private fun connection(url: String): Response {
+        val request = Request.Builder().url(url).build()
+        return okHttpClient.newCall(request).execute()
+    }
+
+    private fun <T> convert(response: Response, clazz: Class<T>): T {
+        return Gson().fromJson(response.body?.string(), clazz)
     }
 
 }

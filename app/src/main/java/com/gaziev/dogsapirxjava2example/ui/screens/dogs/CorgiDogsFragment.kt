@@ -13,6 +13,7 @@ import com.gaziev.dogsapirxjava2example.ui.screens.common.ViewModelFactory
 import com.gaziev.dogsapirxjava2example.ui.screens.dogs.list.CorgiDogsAdapter
 
 class CorgiDogsFragment : BaseFragment<FragmentCorgiDogsBinding>() {
+    override val title: String = "List dogs by: Corgi"
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentCorgiDogsBinding = FragmentCorgiDogsBinding::inflate
     private val viewModel: CorgiDogsViewModel by viewModels { ViewModelFactory(activity?.application!!) }
 

@@ -19,8 +19,8 @@ import com.gaziev.dogsapirxjava2example.data.source.NetworkDogService
 import com.gaziev.dogsapirxjava2example.ui.models.CorgiDogsDetails
 import com.gaziev.dogsapirxjava2example.ui.models.BreedDogDetails
 import com.gaziev.dogsapirxjava2example.ui.models.DogDetails
-import com.gaziev.dogsapirxjava2example.ui.screens.breeds.BreedRandomDogViewModel
-import com.gaziev.dogsapirxjava2example.ui.screens.breeds.IGetListBreedRandomDogsRepository
+import com.gaziev.dogsapirxjava2example.ui.screens.breed.BreedRandomDogViewModel
+import com.gaziev.dogsapirxjava2example.ui.screens.breed.IGetListBreedRandomDogsRepository
 import com.gaziev.dogsapirxjava2example.ui.screens.dogs.CorgiDogsViewModel
 import com.gaziev.dogsapirxjava2example.ui.screens.dogs.IGetListCorgiDogsRepository
 import com.gaziev.dogsapirxjava2example.ui.screens.random.IGetRandomDogRepository

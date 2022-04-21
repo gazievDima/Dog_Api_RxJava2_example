@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.breeds
+package com.gaziev.dogsapirxjava2example.ui.screens.breed
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

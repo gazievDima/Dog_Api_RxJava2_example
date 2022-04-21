@@ -8,22 +8,19 @@ import com.gaziev.dogsapirxjava2example.R
 import com.gaziev.dogsapirxjava2example.databinding.ItemCorgiDogsBinding
 
 class CorgiDogsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+    private val binding = ItemCorgiDogsBinding.bind(itemView)
+
     fun bind(dogImage: String?) {
+       val res = dogImage ?: R.drawable.failed_download
+        setImage(res)
+    }
 
-        val dogContainer = itemView.findViewById<ImageView>(R.id.dogContainer)
-        if(dogImage == null) {
-            Glide
-                .with(itemView)
-                .load(R.drawable.failed_download)
-                .into(dogContainer)
-
-        } else {
-            Glide
-                .with(itemView)
-                .load(dogImage)
-                .placeholder(R.drawable.loading)
-                .into(dogContainer)
-        }
-
+    private fun setImage(url: Any) {
+        Glide
+            .with(itemView)
+            .load(url)
+            .placeholder(R.drawable.loading)
+            .into(binding.dogContainer)
     }
 }
