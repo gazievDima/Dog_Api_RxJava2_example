@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.models
+package com.gaziev.dogsapirxjava2example.presentation.models
 
 class DogDetails(
     val randomDog: String?,

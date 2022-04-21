@@ -1,7 +1,6 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.dogs.list
+package com.gaziev.dogsapirxjava2example.presentation.screens.dogs.list
 
 import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gaziev.dogsapirxjava2example.R

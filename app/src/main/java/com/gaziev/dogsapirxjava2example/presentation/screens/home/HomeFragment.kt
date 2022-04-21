@@ -1,17 +1,14 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.home
+package com.gaziev.dogsapirxjava2example.presentation.screens.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.gaziev.dogsapirxjava2example.R
 import com.gaziev.dogsapirxjava2example.databinding.FragmentHomeBinding
-import com.gaziev.dogsapirxjava2example.ui.screens.breed.BreedRandomDogFragment
-import com.gaziev.dogsapirxjava2example.ui.screens.common.BaseFragment
-import com.gaziev.dogsapirxjava2example.ui.screens.dogs.CorgiDogsFragment
-import com.gaziev.dogsapirxjava2example.ui.screens.home.about.AboutDialogFragment
-import com.gaziev.dogsapirxjava2example.ui.screens.random.RandomDogFragment
+import com.gaziev.dogsapirxjava2example.presentation.screens.common.BaseFragment
+import com.gaziev.dogsapirxjava2example.presentation.screens.home.about.AboutDialogFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val title: String = "Welcome to app: Pesiki"
@@ -21,24 +18,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.corgiDogs.setOnClickListener {
-            openFragment(CorgiDogsFragment())
+            findNavController().navigate(R.id.corgiDogsFragment)
         }
         binding.breedRandomDog.setOnClickListener {
-            openFragment(BreedRandomDogFragment())
+            findNavController().navigate(R.id.breedRandomDogFragment)
         }
         binding.randomDog.setOnClickListener {
-            openFragment(RandomDogFragment())
+            findNavController().navigate(R.id.randomDogFragment)
         }
         binding.about.setOnClickListener {
             AboutDialogFragment().show(childFragmentManager, null)
         }
-    }
-
-    private fun openFragment(fragment: Fragment) {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.container, fragment)
-            .addToBackStack(null)
-            .commit()
     }
 
 }

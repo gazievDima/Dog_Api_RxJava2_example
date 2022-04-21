@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_randomDogFragment"
+            app:destination="@id/randomDogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_corgiDogsFragment"
+            app:destination="@id/corgiDogsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_breedRandomDogFragment"
+            app:destination="@id/breedRandomDogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomDogFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.random.RandomDogFragment"
+        android:label="RandomDogFragment" />
+    <fragment
+        android:id="@+id/corgiDogsFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.dogs.CorgiDogsFragment"
+        android:label="CorgiDogsFragment" />
+    <fragment
+        android:id="@+id/breedRandomDogFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.breed.BreedRandomDogFragment"
+        android:label="BreedRandomDogFragment" />
+</navigation>

@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.breed
+package com.gaziev.dogsapirxjava2example.presentation.screens.random
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,14 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.gaziev.dogsapirxjava2example.R
 import com.gaziev.dogsapirxjava2example.databinding.FragmentRandomDogBinding
-import com.gaziev.dogsapirxjava2example.ui.MainActivity
-import com.gaziev.dogsapirxjava2example.ui.screens.common.BaseFragment
-import com.gaziev.dogsapirxjava2example.ui.screens.common.ViewModelFactory
+import com.gaziev.dogsapirxjava2example.presentation.screens.common.BaseFragment
+import com.gaziev.dogsapirxjava2example.presentation.screens.common.ViewModelFactory
 
-class BreedRandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
-    override val title: String = "Random dog by breed: Corgi"
+class RandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
+    override val title: String = "Random dog"
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRandomDogBinding =
         FragmentRandomDogBinding::inflate
-    private val viewModel: BreedRandomDogViewModel by viewModels { ViewModelFactory(activity?.application!!) }
+    private val viewModel: RandomDogViewModel by viewModels { ViewModelFactory(activity?.application!!) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +26,7 @@ class BreedRandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
         }
 
         binding.get.setOnClickListener {
-            viewModel.getBreedRandomDog()
+            viewModel.getRandomDog()
         }
     }
 

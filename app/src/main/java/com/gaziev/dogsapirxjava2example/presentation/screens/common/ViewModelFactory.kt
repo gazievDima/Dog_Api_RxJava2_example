@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.common
+package com.gaziev.dogsapirxjava2example.presentation.screens.common
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
@@ -16,27 +16,29 @@ import com.gaziev.dogsapirxjava2example.data.repository.GetListBreedRandomDogsRe
 import com.gaziev.dogsapirxjava2example.data.repository.GetRandomDogRepository
 import com.gaziev.dogsapirxjava2example.data.repository.INetworkDogService
 import com.gaziev.dogsapirxjava2example.data.source.NetworkDogService
-import com.gaziev.dogsapirxjava2example.ui.models.CorgiDogsDetails
-import com.gaziev.dogsapirxjava2example.ui.models.BreedDogDetails
-import com.gaziev.dogsapirxjava2example.ui.models.DogDetails
-import com.gaziev.dogsapirxjava2example.ui.screens.breed.BreedRandomDogViewModel
-import com.gaziev.dogsapirxjava2example.ui.screens.breed.IGetListBreedRandomDogsRepository
-import com.gaziev.dogsapirxjava2example.ui.screens.dogs.CorgiDogsViewModel
-import com.gaziev.dogsapirxjava2example.ui.screens.dogs.IGetListCorgiDogsRepository
-import com.gaziev.dogsapirxjava2example.ui.screens.random.IGetRandomDogRepository
-import com.gaziev.dogsapirxjava2example.ui.screens.random.RandomDogViewModel
+import com.gaziev.dogsapirxjava2example.presentation.models.CorgiDogsDetails
+import com.gaziev.dogsapirxjava2example.presentation.models.BreedDogDetails
+import com.gaziev.dogsapirxjava2example.presentation.models.DogDetails
+import com.gaziev.dogsapirxjava2example.presentation.screens.breed.BreedRandomDogViewModel
+import com.gaziev.dogsapirxjava2example.presentation.screens.breed.IGetListBreedRandomDogsRepository
+import com.gaziev.dogsapirxjava2example.presentation.screens.dogs.CorgiDogsViewModel
+import com.gaziev.dogsapirxjava2example.presentation.screens.dogs.IGetListCorgiDogsRepository
+import com.gaziev.dogsapirxjava2example.presentation.screens.random.IGetRandomDogRepository
+import com.gaziev.dogsapirxjava2example.presentation.screens.random.RandomDogViewModel
+import javax.inject.Inject
 
-class ViewModelFactory(application: Application) : ViewModelProvider.Factory {
+class ViewModelFactory constructor(application: Application) : ViewModelProvider.Factory {
 
     private val okHttpClient = (application as App).okhttpClient
     private val apiDogService: INetworkDogService = NetworkDogService(okHttpClient)
+
     private val mapperBoxerDogs: IMapper<CorgiDogsEntity, CorgiDogsDetails> = CorgiDogsMapper()
-    private val mapperBreedDogEntity: IMapper<BreedDogEntity, BreedDogDetails> = BreedDogMapper()
-    private val mapperDogEntity: IMapper<DogEntity, DogDetails> = DogMapper()
+    private val mapperBreedDog: IMapper<BreedDogEntity, BreedDogDetails> = BreedDogMapper()
+    private val mapperDog: IMapper<DogEntity, DogDetails> = DogMapper()
 
     private val getListBoxerRepository: IGetListCorgiDogsRepository = GetListCorgiDogsRepository(apiDogService, mapperBoxerDogs)
-    private val getListBreedRandomDogRepository: IGetListBreedRandomDogsRepository = GetListBreedRandomDogsRepository(apiDogService, mapperBreedDogEntity)
-    private val getRandomDogRepository: IGetRandomDogRepository = GetRandomDogRepository(apiDogService, mapperDogEntity)
+    private val getListBreedRandomDogRepository: IGetListBreedRandomDogsRepository = GetListBreedRandomDogsRepository(apiDogService, mapperBreedDog)
+    private val getRandomDogRepository: IGetRandomDogRepository = GetRandomDogRepository(apiDogService, mapperDog)
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         when {

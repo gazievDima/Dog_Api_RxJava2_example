@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.home.about
+package com.gaziev.dogsapirxjava2example.presentation.screens.home.about
 
 import android.app.AlertDialog
 import android.app.Dialog

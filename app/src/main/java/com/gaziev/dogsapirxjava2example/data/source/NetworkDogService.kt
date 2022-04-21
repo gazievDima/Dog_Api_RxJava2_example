@@ -14,7 +14,6 @@ import okhttp3.Response
 class NetworkDogService(
     private val okHttpClient: OkHttpClient
 ) : INetworkDogService {
-
     companion object {
         const val URL_CORGI_DOGS = "https://dog.ceo/api/breed/corgi/images"
         const val URL_BREED_DOG = "https://dog.ceo/api/breed/corgi/images/random"

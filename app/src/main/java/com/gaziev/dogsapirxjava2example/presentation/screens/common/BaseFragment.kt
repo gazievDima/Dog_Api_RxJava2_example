@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.ui.screens.common
+package com.gaziev.dogsapirxjava2example.presentation.screens.common
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.gaziev.dogsapirxjava2example.ui.MainActivity
+import com.gaziev.dogsapirxjava2example.presentation.MainActivity
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 

@@ -2,8 +2,8 @@ package com.gaziev.dogsapirxjava2example.data.repository
 
 import com.gaziev.dogsapirxjava2example.data.mapper.IMapper
 import com.gaziev.dogsapirxjava2example.data.models.CorgiDogsEntity
-import com.gaziev.dogsapirxjava2example.ui.models.CorgiDogsDetails
-import com.gaziev.dogsapirxjava2example.ui.screens.dogs.IGetListCorgiDogsRepository
+import com.gaziev.dogsapirxjava2example.presentation.models.CorgiDogsDetails
+import com.gaziev.dogsapirxjava2example.presentation.screens.dogs.IGetListCorgiDogsRepository
 import io.reactivex.Observable
 
 class GetListCorgiDogsRepository(

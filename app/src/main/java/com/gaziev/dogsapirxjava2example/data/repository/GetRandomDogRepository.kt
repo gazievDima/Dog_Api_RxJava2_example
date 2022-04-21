@@ -2,10 +2,9 @@ package com.gaziev.dogsapirxjava2example.data.repository
 
 import com.gaziev.dogsapirxjava2example.data.mapper.IMapper
 import com.gaziev.dogsapirxjava2example.data.models.DogEntity
-import com.gaziev.dogsapirxjava2example.ui.models.DogDetails
-import com.gaziev.dogsapirxjava2example.ui.screens.random.IGetRandomDogRepository
+import com.gaziev.dogsapirxjava2example.presentation.models.DogDetails
+import com.gaziev.dogsapirxjava2example.presentation.screens.random.IGetRandomDogRepository
 import io.reactivex.Observable
-import io.reactivex.Single
 
 class GetRandomDogRepository(
     private val service: INetworkDogService,

@@ -1,7 +1,8 @@
 package com.gaziev.dogsapirxjava2example.data.mapper
 
 import com.gaziev.dogsapirxjava2example.data.models.BreedDogEntity
-import com.gaziev.dogsapirxjava2example.ui.models.BreedDogDetails
+import com.gaziev.dogsapirxjava2example.presentation.models.BreedDogDetails
+import javax.inject.Inject
 
 class BreedDogMapper : IMapper<BreedDogEntity, BreedDogDetails> {
 

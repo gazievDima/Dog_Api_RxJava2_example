@@ -2,8 +2,8 @@ package com.gaziev.dogsapirxjava2example.data.repository
 
 import com.gaziev.dogsapirxjava2example.data.mapper.IMapper
 import com.gaziev.dogsapirxjava2example.data.models.BreedDogEntity
-import com.gaziev.dogsapirxjava2example.ui.models.BreedDogDetails
-import com.gaziev.dogsapirxjava2example.ui.screens.breed.IGetListBreedRandomDogsRepository
+import com.gaziev.dogsapirxjava2example.presentation.models.BreedDogDetails
+import com.gaziev.dogsapirxjava2example.presentation.screens.breed.IGetListBreedRandomDogsRepository
 import io.reactivex.Observable
 
 class GetListBreedRandomDogsRepository(
