@@ -11,5 +11,5 @@
     <string name="list_corgi">List corgi</string>
     <string name="random_corgi_dog">Random corgi dog</string>
     <string name="breed_random_dog">Breed random dog</string>
-    <string name="get_dog">Get dog</string>
+    <string name="replace">Replace</string>
 </resources>

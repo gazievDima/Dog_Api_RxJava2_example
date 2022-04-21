@@ -10,8 +10,9 @@ import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import javax.inject.Inject
 
-class NetworkDogService(
+class NetworkDogService @Inject constructor(
     private val okHttpClient: OkHttpClient
 ) : INetworkDogService {
     companion object {
