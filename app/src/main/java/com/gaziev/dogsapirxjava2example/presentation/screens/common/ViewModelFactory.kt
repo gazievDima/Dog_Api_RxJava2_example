@@ -29,7 +29,7 @@ import com.gaziev.dogsapirxjava2example.presentation.screens.random.RandomDogVie
 class ViewModelFactory constructor(application: Application) : ViewModelProvider.Factory {
 
     private val okHttpClient = (application as App).okhttpClient
-    private val apiDogService = NetworkDogService(okHttpClient)
+    private val apiDogService = NetworkDogService(okHttpClient, "","","")
 
     private val mapperBoxerDogs = CorgiDogsMapper()
     private val mapperBreedDog = BreedDogMapper()

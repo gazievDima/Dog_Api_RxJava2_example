@@ -13,13 +13,11 @@ import okhttp3.Response
 import javax.inject.Inject
 
 class NetworkDogService @Inject constructor(
-    private val okHttpClient: OkHttpClient
+    private val okHttpClient: OkHttpClient,
+    private val URL_CORGI_DOGS: String,
+    private val URL_BREED_DOG: String,
+    private val URL_DOG: String
 ) : INetworkDogService {
-    companion object {
-        const val URL_CORGI_DOGS = "https://dog.ceo/api/breed/corgi/images"
-        const val URL_BREED_DOG = "https://dog.ceo/api/breed/corgi/images/random"
-        const val URL_DOG = "https://dog.ceo/api/breeds/image/random"
-    }
 
     override fun getRandomDog(): Observable<DogEntity> {
         return Observable.create<DogEntity> {
