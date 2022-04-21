@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.gaziev.dogsapirxjava2example.App
 import com.gaziev.dogsapirxjava2example.R
@@ -17,15 +18,16 @@ class RandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
     override val title: String = "Random dog"
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRandomDogBinding =
         FragmentRandomDogBinding::inflate
-    //private val viewModel: RandomDogViewModel by viewModels { ViewModelFactory(activity?.application!!) }
 
     @Inject
-    lateinit var viewModel: RandomDogViewModel
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         (activity?.application as App).daggerAppComponent.inject(this)
+        val viewModel = ViewModelProvider(this, viewModelFactory)[RandomDogViewModel::class.java]
+
 
         viewModel.dogImage.observe(viewLifecycleOwner) { url: String? ->
             val res = url ?: R.drawable.failed_download

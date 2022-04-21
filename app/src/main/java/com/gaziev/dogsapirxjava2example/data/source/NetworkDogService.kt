@@ -11,7 +11,9 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class NetworkDogService @Inject constructor(
     private val okHttpClient: OkHttpClient,
     private val URL_CORGI_DOGS: String,

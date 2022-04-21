@@ -4,9 +4,12 @@ import com.gaziev.dogsapirxjava2example.data.source.NetworkDogService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import javax.inject.Singleton
 
 @Module
 class ServiceModule() {
+
+    @Singleton
     @Provides
     fun provideNetworkDogService(): NetworkDogService {
         return NetworkDogService(

@@ -14,16 +14,13 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import javax.inject.Singleton
 
-@Component(modules = [DaggerAppModule::class])
+@Singleton
+@Component(modules = [ServiceModule::class, RepositoryModule::class, MapperModule::class, ViewModelModule::class])
 interface DaggerAppComponent {
     fun inject(fragment: BreedRandomDogFragment)
     fun inject(fragment: CorgiDogsFragment)
     fun inject(fragment: RandomDogFragment)
 }
-
-@Module(includes = [ServiceModule::class, RepositoryModule::class, MapperModule::class])
-class DaggerAppModule
-
-
 

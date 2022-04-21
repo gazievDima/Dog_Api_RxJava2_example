@@ -7,7 +7,6 @@ import okhttp3.OkHttpClient
 
 class App : Application() {
 
-    val daggerAppComponent = DaggerDaggerAppComponent.create()
-    val okhttpClient: OkHttpClient by lazy { OkHttpClient() }
+    val daggerAppComponent: DaggerAppComponent = DaggerDaggerAppComponent.create()
 
 }
