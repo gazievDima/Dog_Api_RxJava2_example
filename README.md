@@ -1,3 +1,9 @@
 ## Dog Api RxJava2 and OkHttp example
 
-Example used rxJava2 in project + library okHttp
+Example project with used RxJava2 and also:
+
+- dagger2
+- navigation jetpack
+- gson
+- okhttp
+- glide
