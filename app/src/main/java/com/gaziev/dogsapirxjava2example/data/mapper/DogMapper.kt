@@ -1,12 +1,12 @@
 package com.gaziev.dogsapirxjava2example.data.mapper
 
-import com.gaziev.dogsapirxjava2example.data.models.DogEntity
-import com.gaziev.dogsapirxjava2example.presentation.models.DogDetails
+import com.gaziev.dogsapirxjava2example.data.models.DogApiEntity
+import com.gaziev.dogsapirxjava2example.presentation.models.DogApiDetails
 import javax.inject.Inject
 
-class DogMapper @Inject constructor() : IMapper<DogEntity, DogDetails> {
+class DogMapper @Inject constructor() : IMapper<DogApiEntity, DogApiDetails> {
 
-    override fun map(t: DogEntity): DogDetails {
-        return DogDetails(t.imageUrl, t.status)
+    override fun map(t: DogApiEntity): DogApiDetails {
+        return DogApiDetails(t.imageUrl, t.status)
     }
 }

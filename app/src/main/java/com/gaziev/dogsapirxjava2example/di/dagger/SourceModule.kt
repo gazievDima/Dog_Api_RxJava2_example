@@ -1,6 +1,6 @@
 package com.gaziev.dogsapirxjava2example.di.dagger
 
-import com.gaziev.dogsapirxjava2example.data.sources.remote.DogsNetworkSourceImpl
+import com.gaziev.dogsapirxjava2example.data.sources.remote.DogsApiSourceImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -11,8 +11,8 @@ class SourceModule() {
 
     @Singleton
     @Provides
-    fun provideDogsNetworkSource(): DogsNetworkSourceImpl {
-        return DogsNetworkSourceImpl(
+    fun provideDogsNetworkSource(): DogsApiSourceImpl {
+        return DogsApiSourceImpl(
             OkHttpClient(),
             "https://dog.ceo/api/breed/corgi/images",
             "https://dog.ceo/api/breed/corgi/images/random",
