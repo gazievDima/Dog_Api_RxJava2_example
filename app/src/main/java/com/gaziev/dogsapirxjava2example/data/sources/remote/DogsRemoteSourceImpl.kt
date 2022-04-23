@@ -13,7 +13,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class DogsApiSourceImpl @Inject constructor(
+class DogsRemoteSourceImpl @Inject constructor(
     private val okHttpClient: OkHttpClient,
     private val URL_CORGI_DOGS: String,
     private val URL_BREED_DOG: String,
