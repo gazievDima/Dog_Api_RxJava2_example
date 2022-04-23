@@ -17,16 +17,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.corgiDogs.setOnClickListener {
+        binding.btnCorgiDogs.setOnClickListener {
             findNavController().navigate(R.id.corgiDogsFragment)
         }
-        binding.breedRandomDog.setOnClickListener {
+        binding.btnCorgiDog.setOnClickListener {
             findNavController().navigate(R.id.breedRandomDogFragment)
         }
-        binding.randomDog.setOnClickListener {
+        binding.btnAnyDog.setOnClickListener {
             findNavController().navigate(R.id.randomDogFragment)
         }
-        binding.about.setOnClickListener {
+        binding.btnAbout.setOnClickListener {
             AboutDialogFragment().show(childFragmentManager, null)
         }
     }

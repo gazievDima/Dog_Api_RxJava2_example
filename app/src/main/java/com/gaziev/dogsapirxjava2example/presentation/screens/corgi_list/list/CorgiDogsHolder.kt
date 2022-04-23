@@ -20,6 +20,6 @@ class CorgiDogsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .with(itemView)
             .load(url)
             .placeholder(R.drawable.holder_loading)
-            .into(binding.dogContainer)
+            .into(binding.ivContainer)
     }
 }

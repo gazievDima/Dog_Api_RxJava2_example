@@ -21,17 +21,17 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAnyDog"
         style="@style/SimpleButtonStyle"
-        android:text="@string/random_any_dog" />
+        android:text="@string/any_dog" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCorgiDog"
+        style="@style/SimpleButtonStyle"
+        android:text="@string/corgi_dog" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCorgiDogs"
         style="@style/SimpleButtonStyle"
         android:text="@string/list_corgi" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCorgiDog"
-        style="@style/SimpleButtonStyle"
-        android:text="@string/random_corgi_dog" />
 
     <Space
         android:layout_width="match_parent"

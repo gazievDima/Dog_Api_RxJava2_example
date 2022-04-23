@@ -8,8 +8,10 @@
     <string name="get_random">Get random</string>
     <string name="random_any_dog">Random any dog</string>
     <string name="get_list_corgi">Get list corgi</string>
-    <string name="list_corgi">List corgi</string>
     <string name="random_corgi_dog">Random corgi dog</string>
     <string name="breed_random_dog">Breed random dog</string>
     <string name="replace">Replace</string>
+    <string name="any_dog">Any Dog</string>
+    <string name="list_corgi">List corgi</string>
+    <string name="corgi_dog">Corgi dog</string>
 </resources>

@@ -8,14 +8,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.gaziev.dogsapirxjava2example.App
 import com.gaziev.dogsapirxjava2example.R
-import com.gaziev.dogsapirxjava2example.databinding.FragmentRandomDogBinding
+import com.gaziev.dogsapirxjava2example.databinding.FragmentDogBinding
 import com.gaziev.dogsapirxjava2example.presentation.screens.common.BaseFragment
 import javax.inject.Inject
 
-class CorgiDogFragment : BaseFragment<FragmentRandomDogBinding>() {
+class CorgiDogFragment : BaseFragment<FragmentDogBinding>() {
     override val title: String = "Random dog by breed: Corgi"
-    override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRandomDogBinding =
-        FragmentRandomDogBinding::inflate
+    override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDogBinding =
+        FragmentDogBinding::inflate
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -32,7 +32,7 @@ class CorgiDogFragment : BaseFragment<FragmentRandomDogBinding>() {
             binding.splash.visibility = View.GONE
         }
 
-        binding.get.setOnClickListener {
+        binding.btnReplace.setOnClickListener {
             viewModel.getBreedRandomDog()
         }
     }
@@ -42,6 +42,6 @@ class CorgiDogFragment : BaseFragment<FragmentRandomDogBinding>() {
             .with(this)
             .load(url)
             .placeholder(R.drawable.holder_loading)
-            .into(binding.dogContainer)
+            .into(binding.ivContainer)
     }
 }
