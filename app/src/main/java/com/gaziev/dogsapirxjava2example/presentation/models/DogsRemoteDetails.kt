@@ -1,6 +1,6 @@
 package com.gaziev.dogsapirxjava2example.presentation.models
 
-class DogsApiDetails(
+class DogsRemoteDetails(
     val listImageUrl: List<String?>?,
     val status: String?
     )

@@ -1,12 +1,12 @@
 package com.gaziev.dogsapirxjava2example.data.repository.sources
 
-import com.gaziev.dogsapirxjava2example.data.models.DogsApiEntity
-import com.gaziev.dogsapirxjava2example.data.models.DogApiEntity
+import com.gaziev.dogsapirxjava2example.data.models.DogsRemoteEntity
+import com.gaziev.dogsapirxjava2example.data.models.DogRemoteEntity
 import io.reactivex.Observable
 
 interface DogsNetworkSource {
 
-    fun getAny(): Observable<DogApiEntity>
-    fun getCorgi(): Observable<DogApiEntity>
-    fun getListCorgi(): Observable<DogsApiEntity>
+    fun getAny(): Observable<DogRemoteEntity>
+    fun getCorgi(): Observable<DogRemoteEntity>
+    fun getListCorgi(): Observable<DogsRemoteEntity>
 }

@@ -1,7 +1,7 @@
 package com.gaziev.dogsapirxjava2example.data.sources.remote
 
-import com.gaziev.dogsapirxjava2example.data.models.DogsApiEntity
-import com.gaziev.dogsapirxjava2example.data.models.DogApiEntity
+import com.gaziev.dogsapirxjava2example.data.models.DogsRemoteEntity
+import com.gaziev.dogsapirxjava2example.data.models.DogRemoteEntity
 import com.gaziev.dogsapirxjava2example.data.repository.sources.DogsNetworkSource
 import com.google.gson.Gson
 import io.reactivex.Observable
@@ -20,32 +20,32 @@ class DogsApiSourceImpl @Inject constructor(
     private val URL_DOG: String
 ) : DogsNetworkSource {
 
-    override fun getAny(): Observable<DogApiEntity> {
-        return Observable.create<DogApiEntity> {
+    override fun getAny(): Observable<DogRemoteEntity> {
+        return Observable.create<DogRemoteEntity> {
             try {
-                it.onNext(getData(URL_DOG, DogApiEntity::class.java))
+                it.onNext(getData(URL_DOG, DogRemoteEntity::class.java))
             } catch (e: Exception) {
-                it.onNext(DogApiEntity(null, null))
+                it.onNext(DogRemoteEntity(null, null))
             }
         }.subscribeOn(Schedulers.newThread())
     }
 
-    override fun getCorgi(): Observable<DogApiEntity> {
-        return Observable.create<DogApiEntity> {
+    override fun getCorgi(): Observable<DogRemoteEntity> {
+        return Observable.create<DogRemoteEntity> {
             try {
-                it.onNext(getData(URL_BREED_DOG, DogApiEntity::class.java))
+                it.onNext(getData(URL_BREED_DOG, DogRemoteEntity::class.java))
             } catch (e: Exception) {
-                it.onNext(DogApiEntity(null, null))
+                it.onNext(DogRemoteEntity(null, null))
             }
         }.subscribeOn(Schedulers.newThread())
     }
 
-    override fun getListCorgi(): Observable<DogsApiEntity> {
-        return Observable.create<DogsApiEntity> {
+    override fun getListCorgi(): Observable<DogsRemoteEntity> {
+        return Observable.create<DogsRemoteEntity> {
             try {
-                it.onNext(getData(URL_CORGI_DOGS, DogsApiEntity::class.java))
+                it.onNext(getData(URL_CORGI_DOGS, DogsRemoteEntity::class.java))
             } catch (e: Exception) {
-                it.onNext(DogsApiEntity(listOf(null, null, null), null))
+                it.onNext(DogsRemoteEntity(listOf(null, null, null), null))
             }
         }.subscribeOn(Schedulers.newThread())
     }
@@ -53,7 +53,7 @@ class DogsApiSourceImpl @Inject constructor(
     private fun <T> getData(url: String, clazz: Class<T>): T {
         val response = connection(url)
         return if (response.code == 200) convert(response, clazz)
-        else DogApiEntity(null, null) as T
+        else DogRemoteEntity(null, null) as T
     }
 
     private fun connection(url: String): Response {

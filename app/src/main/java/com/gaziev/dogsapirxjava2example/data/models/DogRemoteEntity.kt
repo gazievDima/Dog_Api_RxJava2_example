@@ -2,9 +2,9 @@ package com.gaziev.dogsapirxjava2example.data.models
 
 import com.google.gson.annotations.SerializedName
 
-class DogsApiEntity(
+class DogRemoteEntity(
     @SerializedName("message")
-    val listImageUrl: List<String?>?,
+    val imageUrl: String?,
     @SerializedName("status")
     val status: String?
-    )
+)
