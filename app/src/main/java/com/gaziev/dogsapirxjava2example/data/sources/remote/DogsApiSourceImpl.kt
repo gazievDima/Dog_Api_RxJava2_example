@@ -2,7 +2,7 @@ package com.gaziev.dogsapirxjava2example.data.sources.remote
 
 import com.gaziev.dogsapirxjava2example.data.models.DogsRemoteEntity
 import com.gaziev.dogsapirxjava2example.data.models.DogRemoteEntity
-import com.gaziev.dogsapirxjava2example.data.repository.sources.DogsNetworkSource
+import com.gaziev.dogsapirxjava2example.data.repository.sources.DogsRemoteSource
 import com.google.gson.Gson
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
@@ -18,7 +18,7 @@ class DogsApiSourceImpl @Inject constructor(
     private val URL_CORGI_DOGS: String,
     private val URL_BREED_DOG: String,
     private val URL_DOG: String
-) : DogsNetworkSource {
+) : DogsRemoteSource {
 
     override fun getAny(): Observable<DogRemoteEntity> {
         return Observable.create<DogRemoteEntity> {

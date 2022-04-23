@@ -4,7 +4,7 @@ import com.gaziev.dogsapirxjava2example.data.models.DogsRemoteEntity
 import com.gaziev.dogsapirxjava2example.data.models.DogRemoteEntity
 import io.reactivex.Observable
 
-interface DogsNetworkSource {
+interface DogsRemoteSource {
 
     fun getAny(): Observable<DogRemoteEntity>
     fun getCorgi(): Observable<DogRemoteEntity>

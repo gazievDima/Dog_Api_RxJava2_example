@@ -2,13 +2,13 @@ package com.gaziev.dogsapirxjava2example.data.repository
 
 import com.gaziev.dogsapirxjava2example.data.mapper.IMapper
 import com.gaziev.dogsapirxjava2example.data.models.DogRemoteEntity
-import com.gaziev.dogsapirxjava2example.data.repository.sources.DogsNetworkSource
+import com.gaziev.dogsapirxjava2example.data.repository.sources.DogsRemoteSource
 import com.gaziev.dogsapirxjava2example.presentation.models.DogRemoteDetails
 import com.gaziev.dogsapirxjava2example.presentation.repository.DogRepository
 import io.reactivex.Observable
 
 class DogRepositoryImpl(
-    private val service: DogsNetworkSource,
+    private val service: DogsRemoteSource,
     private val mapper: IMapper<DogRemoteEntity, DogRemoteDetails>
 ) : DogRepository {
 
