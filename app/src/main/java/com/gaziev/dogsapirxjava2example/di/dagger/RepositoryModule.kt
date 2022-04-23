@@ -1,15 +1,12 @@
 package com.gaziev.dogsapirxjava2example.di.dagger
 
-import com.gaziev.dogsapirxjava2example.data.mapper.BreedDogMapper
-import com.gaziev.dogsapirxjava2example.data.mapper.CorgiDogsMapper
+import com.gaziev.dogsapirxjava2example.data.mapper.DogsMapper
 import com.gaziev.dogsapirxjava2example.data.mapper.DogMapper
-import com.gaziev.dogsapirxjava2example.data.repository.GetBreedRandomDogsRepository
-import com.gaziev.dogsapirxjava2example.data.repository.GetListCorgiDogsRepository
-import com.gaziev.dogsapirxjava2example.data.repository.GetRandomDogRepository
-import com.gaziev.dogsapirxjava2example.data.source.NetworkDogService
-import com.gaziev.dogsapirxjava2example.presentation.screens.breed.IGetBreedRandomDogsRepository
-import com.gaziev.dogsapirxjava2example.presentation.screens.dogs.IGetListCorgiDogsRepository
-import com.gaziev.dogsapirxjava2example.presentation.screens.random.IGetRandomDogRepository
+import com.gaziev.dogsapirxjava2example.data.repository.DogRepositoryImpl
+import com.gaziev.dogsapirxjava2example.data.repository.DogsRepositoryImpl
+import com.gaziev.dogsapirxjava2example.data.sources.remote.DogsNetworkSourceImpl
+import com.gaziev.dogsapirxjava2example.presentation.repository.DogRepository
+import com.gaziev.dogsapirxjava2example.presentation.repository.DogsRepository
 import dagger.Module
 import dagger.Provides
 
@@ -17,26 +14,19 @@ import dagger.Provides
 @Module
 class RepositoryModule() {
     @Provides
-    fun provideGetBreedRandomDogsRepository(
-        service: NetworkDogService,
-        mapper: BreedDogMapper
-    ): IGetBreedRandomDogsRepository {
-        return GetBreedRandomDogsRepository(service, mapper)
-    }
-
-    @Provides
-    fun provideGetListCorgiDogsRepository(
-        service: NetworkDogService,
-        mapper: CorgiDogsMapper
-    ): IGetListCorgiDogsRepository {
-        return GetListCorgiDogsRepository(service, mapper)
-    }
-
-    @Provides
-    fun provideGetRandomDogRepository(
-        service: NetworkDogService,
+    fun provideDogRepository(
+        service: DogsNetworkSourceImpl,
         mapper: DogMapper
-    ): IGetRandomDogRepository {
-        return GetRandomDogRepository(service, mapper)
+    ): DogRepository {
+        return DogRepositoryImpl(service, mapper)
     }
+
+    @Provides
+    fun provideDogsRepository(
+        service: DogsNetworkSourceImpl,
+        mapper: DogsMapper
+    ): DogsRepository {
+        return DogsRepositoryImpl(service, mapper)
+    }
+
 }

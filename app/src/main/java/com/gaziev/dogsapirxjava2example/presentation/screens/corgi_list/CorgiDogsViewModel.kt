@@ -1,17 +1,15 @@
-package com.gaziev.dogsapirxjava2example.presentation.screens.dogs
+package com.gaziev.dogsapirxjava2example.presentation.screens.corgi_list
 
-import android.content.ContentValues
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gaziev.dogsapirxjava2example.data.repository.GetListCorgiDogsRepository
+import com.gaziev.dogsapirxjava2example.presentation.repository.DogsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class CorgiDogsViewModel @Inject constructor(
-    private val repository: IGetListCorgiDogsRepository
+    private val repository: DogsRepository
 ) : ViewModel() {
 
     init {
@@ -23,7 +21,7 @@ class CorgiDogsViewModel @Inject constructor(
     val listCorgi: LiveData<List<String?>> = _listCorgi
 
     private fun getListCorgiDogs() {
-        disposable = repository.execute()
+        disposable = repository.getListCorgi()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                     _listCorgi.value = it.corgiDogs

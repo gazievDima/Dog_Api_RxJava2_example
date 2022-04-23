@@ -1,4 +1,4 @@
-package com.gaziev.dogsapirxjava2example.presentation.screens.dogs.list
+package com.gaziev.dogsapirxjava2example.presentation.screens.corgi_list.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,18 +1,15 @@
-package com.gaziev.dogsapirxjava2example.presentation.screens.random
+package com.gaziev.dogsapirxjava2example.presentation.screens.any
 
-import android.content.ContentValues
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gaziev.dogsapirxjava2example.data.repository.GetRandomDogRepository
+import com.gaziev.dogsapirxjava2example.presentation.repository.DogRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
-class RandomDogViewModel @Inject constructor(
-    private val repository: IGetRandomDogRepository
+class AnyDogViewModel @Inject constructor(
+    private val repository: DogRepository
 ) : ViewModel() {
 
     init {
@@ -24,7 +21,7 @@ class RandomDogViewModel @Inject constructor(
     val dogImage: LiveData<String> = _dogImage
 
     fun getRandomDog() {
-       disposable = repository.execute()
+       disposable = repository.getAny()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                     _dogImage.value = it.randomDog

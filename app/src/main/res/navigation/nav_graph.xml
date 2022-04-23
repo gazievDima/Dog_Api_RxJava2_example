@@ -20,14 +20,14 @@
     </fragment>
     <fragment
         android:id="@+id/randomDogFragment"
-        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.random.RandomDogFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.any.AnyDogFragment"
         android:label="RandomDogFragment" />
     <fragment
         android:id="@+id/corgiDogsFragment"
-        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.dogs.CorgiDogsFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.corgi_list.CorgiDogsFragment"
         android:label="CorgiDogsFragment" />
     <fragment
         android:id="@+id/breedRandomDogFragment"
-        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.breed.BreedRandomDogFragment"
+        android:name="com.gaziev.dogsapirxjava2example.presentation.screens.corgi.CorgiDogFragment"
         android:label="BreedRandomDogFragment" />
 </navigation>

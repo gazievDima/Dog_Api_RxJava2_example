@@ -1,18 +1,18 @@
 package com.gaziev.dogsapirxjava2example.di.dagger
 
-import com.gaziev.dogsapirxjava2example.data.source.NetworkDogService
+import com.gaziev.dogsapirxjava2example.data.sources.remote.DogsNetworkSourceImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 @Module
-class ServiceModule() {
+class SourceModule() {
 
     @Singleton
     @Provides
-    fun provideNetworkDogService(): NetworkDogService {
-        return NetworkDogService(
+    fun provideDogsNetworkSource(): DogsNetworkSourceImpl {
+        return DogsNetworkSourceImpl(
             OkHttpClient(),
             "https://dog.ceo/api/breed/corgi/images",
             "https://dog.ceo/api/breed/corgi/images/random",

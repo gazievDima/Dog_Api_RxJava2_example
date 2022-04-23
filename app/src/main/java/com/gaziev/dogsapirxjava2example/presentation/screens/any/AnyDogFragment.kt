@@ -1,20 +1,18 @@
-package com.gaziev.dogsapirxjava2example.presentation.screens.random
+package com.gaziev.dogsapirxjava2example.presentation.screens.any
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.gaziev.dogsapirxjava2example.App
 import com.gaziev.dogsapirxjava2example.R
 import com.gaziev.dogsapirxjava2example.databinding.FragmentRandomDogBinding
 import com.gaziev.dogsapirxjava2example.presentation.screens.common.BaseFragment
-import com.gaziev.dogsapirxjava2example.presentation.screens.common.ViewModelFactory
 import javax.inject.Inject
 
-class RandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
+class AnyDogFragment : BaseFragment<FragmentRandomDogBinding>() {
     override val title: String = "Random dog"
     override val inflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRandomDogBinding =
         FragmentRandomDogBinding::inflate
@@ -26,7 +24,7 @@ class RandomDogFragment : BaseFragment<FragmentRandomDogBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity?.application as App).daggerAppComponent.inject(this)
-        val viewModel = ViewModelProvider(this, viewModelFactory)[RandomDogViewModel::class.java]
+        val viewModel = ViewModelProvider(this, viewModelFactory)[AnyDogViewModel::class.java]
 
 
         viewModel.dogImage.observe(viewLifecycleOwner) { url: String? ->
