@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [SourceModule::class, RepositoryModule::class, MapperModule::class, ViewModelModule::class])
-interface DaggerAppComponent {
+interface AppComponent {
     fun inject(fragment: CorgiDogFragment)
     fun inject(fragment: CorgiDogsFragment)
     fun inject(fragment: AnyDogFragment)

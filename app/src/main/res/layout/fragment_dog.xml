@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    style="@style/Screen"
+    style="@style/ScreenStyle"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -11,14 +11,14 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/dogContainer"
+            android:id="@+id/ivContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/get"
-            style="@style/SimpleButton"
+            android:id="@+id/btnReplace"
+            style="@style/SimpleButtonStyle"
             android:text="@string/replace" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,7 +11,7 @@ class CorgiDogsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding = ItemCorgiDogsBinding.bind(itemView)
 
     fun bind(dogImage: String?) {
-       val res = dogImage ?: R.drawable.failed_download
+       val res = dogImage ?: R.drawable.failed
         setImage(res)
     }
 
@@ -19,7 +19,7 @@ class CorgiDogsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         Glide
             .with(itemView)
             .load(url)
-            .placeholder(R.drawable.loading)
+            .placeholder(R.drawable.holder_loading)
             .into(binding.dogContainer)
     }
 }

@@ -7,6 +7,6 @@ import javax.inject.Inject
 class DogsMapper @Inject constructor() : IMapper<DogsEntity, DogsDetails> {
 
     override fun map(t: DogsEntity): DogsDetails {
-        return DogsDetails(t.corgiDogs, t.status)
+        return DogsDetails(t.listImageUrl, t.status)
     }
 }

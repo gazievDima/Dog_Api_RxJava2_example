@@ -4,7 +4,7 @@
     android:layout_height="@dimen/width_item_image">
 
     <ImageView
-        android:id="@+id/dogContainer"
+        android:id="@+id/ivContainer"
         android:layout_margin="@dimen/margin_simple"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class CorgiDogsViewModel @Inject constructor(
-    private val repository: DogsRepository
+    private val dogsRepository: DogsRepository
 ) : ViewModel() {
 
     init {
@@ -17,14 +17,14 @@ class CorgiDogsViewModel @Inject constructor(
     }
 
     private var disposable: Disposable? = null
-    private val _listCorgi: MutableLiveData<List<String?>> = MutableLiveData()
-    val listCorgi: LiveData<List<String?>> = _listCorgi
+    private val _listImageUrl: MutableLiveData<List<String?>> = MutableLiveData()
+    val listImageUrl: LiveData<List<String?>> = _listImageUrl
 
     private fun getListCorgiDogs() {
-        disposable = repository.getListCorgi()
+        disposable = dogsRepository.getListCorgi()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                    _listCorgi.value = it.corgiDogs
+                    _listImageUrl.value = it.listImageUrl
             }
     }
 

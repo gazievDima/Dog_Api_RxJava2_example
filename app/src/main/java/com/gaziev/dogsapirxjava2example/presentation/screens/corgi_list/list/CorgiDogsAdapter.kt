@@ -9,7 +9,7 @@ class CorgiDogsAdapter(
     private val list: List<String?>
 ) : RecyclerView.Adapter<CorgiDogsHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CorgiDogsHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_corgi_dogs, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_corgi_dog, parent, false)
         return CorgiDogsHolder(view)
     }
 

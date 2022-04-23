@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 class DogEntity(
     @SerializedName("message")
-    val randomDog: String?,
+    val imageUrl: String?,
     @SerializedName("status")
     val status: String?
 )

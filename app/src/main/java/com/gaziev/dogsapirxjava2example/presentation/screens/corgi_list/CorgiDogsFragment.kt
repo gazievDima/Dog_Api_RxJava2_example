@@ -25,7 +25,7 @@ class CorgiDogsFragment : BaseFragment<FragmentCorgiDogsBinding>() {
         (activity?.application as App).daggerAppComponent.inject(this)
         val viewModel = ViewModelProvider(this, viewModelFactory)[CorgiDogsViewModel::class.java]
 
-        viewModel.listCorgi.observe(viewLifecycleOwner) { listCorgi: List<String?>? ->
+        viewModel.listImageUrl.observe(viewLifecycleOwner) { listCorgi: List<String?>? ->
             listCorgi?.let {
                 binding.recycler.layoutManager = LinearLayoutManager(requireContext())
                 binding.recycler.adapter = CorgiDogsAdapter(it)

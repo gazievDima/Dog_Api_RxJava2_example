@@ -27,8 +27,8 @@ class AnyDogFragment : BaseFragment<FragmentRandomDogBinding>() {
         val viewModel = ViewModelProvider(this, viewModelFactory)[AnyDogViewModel::class.java]
 
 
-        viewModel.dogImage.observe(viewLifecycleOwner) { url: String? ->
-            val res = url ?: R.drawable.failed_download
+        viewModel.imageUrl.observe(viewLifecycleOwner) { url: String? ->
+            val res = url ?: R.drawable.failed
             setImage(res)
             binding.splash.visibility = View.GONE
         }
@@ -42,7 +42,7 @@ class AnyDogFragment : BaseFragment<FragmentRandomDogBinding>() {
         Glide
             .with(this)
             .load(url)
-            .placeholder(R.drawable.loading)
+            .placeholder(R.drawable.holder_loading)
             .into(binding.dogContainer)
     }
 }

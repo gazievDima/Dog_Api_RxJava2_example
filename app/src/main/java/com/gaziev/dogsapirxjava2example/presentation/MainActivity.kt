@@ -9,7 +9,7 @@ import com.gaziev.dogsapirxjava2example.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val controller: NavController by lazy { (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController }
+    private val navController: NavController by lazy { (supportFragmentManager.findFragmentById(R.id.ivContainer) as NavHostFragment).navController }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(!controller.popBackStack()) finish()
+        if(!navController.popBackStack()) finish()
     }
 
     fun toolbarChangeTitle(title: String) {
